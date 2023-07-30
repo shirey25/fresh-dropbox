@@ -2,7 +2,7 @@ import LemonIcon from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/lemon-2.ts
 
 export function Navbar() {
   return (
-    <header class="bg-white">
+    <header class="bg-black">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center ">
           <div class="flex items-center flex-1">

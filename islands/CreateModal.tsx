@@ -1,5 +1,6 @@
 import type { Signal } from "@preact/signals";
 
+
 interface CreateProps {
   isOpen: Signal<boolean>;
 }
