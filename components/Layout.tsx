@@ -21,14 +21,15 @@ export default function Layout(props: LayoutProps) {
       
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bg:black">
 
-        <Breadcrumb folder={props.folder} />
         
         <div class="mt-5">
           <CreateButton isOpen={createModalIsOpen} />
         </div>
+        
+
 
         <FileUpload currentFolder={props.folder ? props.folder.id : "home"} />
-
+        <Breadcrumb folder={props.folder} />
         {props.children}
       </div>
 
