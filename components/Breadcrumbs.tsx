@@ -13,7 +13,7 @@ export function Breadcrumb({folder}: BreadProps) {
           (
             <>
               <li class="inline-flex items-center">
-                <a href={ folder.parentFolder === 'home' ? '/' : `/folder/${folder.parentFolder}`} class="text-secondary-500 hover:text-secondary-600">Prev</a>
+                <a href={ folder.parentFolder === 'home' ? '/' : `/folder/${folder.parentFolder}`} class="text-secondary-500 hover:text-secondary-600">Previous</a>
               </li>
               <li class="inline-flex items-center space-x-4">
                 <svg class="h-6 w-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
