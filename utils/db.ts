@@ -34,8 +34,8 @@ export async function deleteFile (id: string): Promise <void>{
     res = await kv.atomic ()
       .check(getRes)
       .delete {["files", id]}
-      .delete (["files_folder", getRes.value.parentFolder , id])
-      .commit();iles_by_pa
+      .delete {[ getRes.value.parentFolder , id]}
+      .commit{}; files_by_pa
   }
 }
 
