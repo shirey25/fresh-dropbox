@@ -11,8 +11,7 @@ export async function saveFolder(folder: Folder): Promise<void> {
     .set(primaryKey, folder)
     .set(byParentKey, folder)
     .commit();
-}
-
+};
 export async function deleteFolder(id: string) {
   let res = { ok: false };
   while (!res.ok) {
@@ -26,16 +25,16 @@ export async function deleteFolder(id: string) {
   }
 }
 
-export async function deleteFile (id: string): Promise <void>{
-  let res = {ok: false};
+export async function deleteFile(id: string): Promise<void> {
+  let res = { ok: false };
   while (!res.ok) {
-    const getRes = await kv.get <FreshFile> (["files", id]);
+    const getRes = await kv.get<FreshFile>(["files", id]);
     if (getRes.value === null) return;
-    res = await kv.atomic ()
+    res = await kv.atomic()
       .check(getRes)
-      .delete {["files", id]}
-      .delete {[ getRes.value.parentFolder , id]}
-      .commit{}; files_by_pa
+      .delete(["files", id])
+      .delete(["files_by_parent_folder", getRes.value.parentFolder, id])
+      .commit();
   }
 }
 

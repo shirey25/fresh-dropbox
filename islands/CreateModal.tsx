@@ -34,7 +34,7 @@ export default function CreateModal(props: CreateProps) {
           <div class="flex justify-between">
             <button
               type="button"
-              class="mr-2 bg-red-500 hover:bg-red-600 text-white py-2 px-4"
+              class="mr-2 bg-red-600 border-rounded px-3 hover:bg-red-500 text-white py-2 px-4"
               onClick={closeModal}
             >
               Cancel

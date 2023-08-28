@@ -6,12 +6,12 @@ interface DeleteButtonProps {
     folder: Folder | null
 }
 
-export default function DeleteButton({ file, folder}) ; DeleteButtonProps) {
+export default function DeleteButton({ file, folder} : DeleteButtonProps) {
     const onDeleteFile = async (file: FreshFile) => {
         const url = "/api/file";
         const response = await fetch(url, { method: "DELETE", credentials: "same-origin", body: JSON.stringify(file) });
 } 
-    if (response.status === 200) {
+    if (Response.status === 200) {
         window.location.reload();
     }
 
@@ -19,9 +19,12 @@ export default function DeleteButton({ file, folder}) ; DeleteButtonProps) {
         const url = "/api/folder";
         const response = await fetch(url, { method: "DELETE", credentials: "same-origin", body: JSON.stringify(folder) });
     }
-    if (response.status === 200) {
+    if (Response.status === 200) {
         window.location.reload();
     }   
 
     return (
-        <button on Click = {() => (file) ? onDeleteFile(file) className="btn btn-danger" onClick={() => file ? onDeleteFile(file) : onDeleteFolder(folder)}>
+        <button onClick={() => (file) ? onDeleteFile(file) : onDeleteFolder(folder!) } class="text-red-700">Delete</button>
+        );
+  
+    }
