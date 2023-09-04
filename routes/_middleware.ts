@@ -10,9 +10,8 @@ export interface State {
 }
 
 export async function handler(req: Request, ctx: MiddlewareHandlerContext<State>) {
-  const supabaseUrl = Deno.env.get("SUPABASE_URL") || "";
-  const supabaseKey = Deno.env.get("SUPABASE_KEY") || "";
-  const client = createClient(supabaseUrl, supabaseKey);
+  
+  const client = createClient(Deno.env.get("SUPABASE_URL")|| "", Deno.env.get("SUPABASE_KEY") || "" )
 
   ctx.state.supabaseClient = client;
 
@@ -23,7 +22,7 @@ export async function handler(req: Request, ctx: MiddlewareHandlerContext<State>
   }
 
   // Replaced `getUser` with `api.getUser` as `getUser` is not a direct method on the Supabase client
-  const { data, error } = await client.auth.api.getUser(supaCreds);
+  const { error } = await client.auth.getUser(supaCreds);
 
   if (error) {
     console.log(error.message);

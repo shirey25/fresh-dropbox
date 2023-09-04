@@ -1,8 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { State } from "./_middleware.ts"
 
-
-
 // deno-lint-ignore no-explicit-any
 export const handler: Handlers<any, State> = {
     async POST(req, ctx) {
