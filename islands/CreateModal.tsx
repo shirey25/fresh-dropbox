@@ -1,6 +1,5 @@
 import type { Signal } from "@preact/signals";
 
-
 interface CreateProps {
   isOpen: Signal<boolean>;
 }
@@ -8,19 +7,22 @@ interface CreateProps {
 export default function CreateModal(props: CreateProps) {
   const closeModal = () => {
     props.isOpen.value = false;
-  }
+  };
 
   if (!props.isOpen.value) {
     return <span></span>;
   }
 
-  return(
+  return (
     <div class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div class="bg-white p-8 rounded shadow-lg">
+      <div class="bg-black p-8 rounded shadow-lg">
         <h2 class="text-lg font-semibold mb-4">Create Folder</h2>
         <form method="POST">
           <div class="mb-4">
-            <label htmlFor="inputField" class="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="inputField"
+              class="block text-sm font-medium text-gray-700"
+            >
               Folder name
             </label>
             <input
@@ -50,5 +52,4 @@ export default function CreateModal(props: CreateProps) {
       </div>
     </div>
   );
-  
 }

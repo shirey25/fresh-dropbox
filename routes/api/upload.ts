@@ -21,8 +21,8 @@ export const handler: Handlers = {
       id: id,
       name: name,
       path: path!,
-      parentFolder: parentFolder
-    }
+      parentFolder: parentFolder,
+    };
     await saveFile(newFile);
 
     return new Response("Upload successful", { status: 200 });

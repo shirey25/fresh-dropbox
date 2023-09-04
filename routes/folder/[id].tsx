@@ -3,8 +3,12 @@ import { Handlers } from "$fresh/server.ts";
 import Layout from "../../components/Layout.tsx";
 import { TableFolder } from "../../components/TableFolder.tsx";
 import { Folder, PageFolders } from "../../models/folder.ts";
-import { getFilesByParentId, getFolder, getFoldersByParentId, saveFolder } from "../../utils/db.ts";
-
+import {
+  getFilesByParentId,
+  getFolder,
+  getFoldersByParentId,
+  saveFolder,
+} from "../../utils/db.ts";
 
 export const handler: Handlers<PageFolders> = {
   async GET(_req, ctx) {
@@ -15,23 +19,22 @@ export const handler: Handlers<PageFolders> = {
       return ctx.renderNotFound();
     }
 
-    const subFolders = await getFoldersByParentId(id)
-    const subFiles = await getFilesByParentId(id)
+    const subFolders = await getFoldersByParentId(id);
+    const subFiles = await getFilesByParentId(id);
 
     const pageFolders: PageFolders = {
       currentFolder: folder,
       subContent: {
         subFolders,
-        subFiles
-      }
-    }
+        subFiles,
+      },
+    };
     return ctx.render(pageFolders);
   },
 
   async POST(req, ctx) {
     const form = await req.formData();
     const folder = form.get("folder") as string;
-
 
     if (folder.length === 0) {
       return new Response("Invalid Content", { status: 400 });
@@ -40,8 +43,8 @@ export const handler: Handlers<PageFolders> = {
     const newFolder: Folder = {
       id: crypto.randomUUID(),
       name: folder,
-      parentFolder: ctx.params.id
-    }
+      parentFolder: ctx.params.id,
+    };
     await saveFolder(newFolder);
 
     // Redirect user to folder id page.
@@ -57,7 +60,10 @@ export const handler: Handlers<PageFolders> = {
 export default function FolderPage(props: PageProps<PageFolders>) {
   return (
     <Layout folder={props.data.currentFolder}>
-      <TableFolder folders={props.data.subContent.subFolders} files={props.data.subContent.subFiles} />
+      <TableFolder
+        folders={props.data.subContent.subFolders}
+        files={props.data.subContent.subFiles}
+      />
     </Layout>
   );
 }

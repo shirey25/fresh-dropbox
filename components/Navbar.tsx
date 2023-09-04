@@ -1,31 +1,67 @@
 import LemonIcon from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/lemon-2.tsx";
 
-export function Navbar() {
-  return (
-    <header class="bg-black">
-      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center ">
-          <div class="flex items-center flex-1">
-            <LemonIcon />
-            <div class="ml-1 font-bold text-blue-500">
-              Fresh-Dropbox
-            </div>
-          </div>
+interface NavbarProps {
+  loggedIn: boolean;
+}
 
-          <div>
-            <nav aria-label="Global">
-              <ul class="flex items-center gap-6 text-sm">
-              <a
-                class="text-gray-500 transition hover:text-blue-500"
-                href="/"
-              >
-                Home
-              </a>
-              </ul>
-            </nav>
-          </div>
-        </div>
+
+export function Navbar({ loggedIn }: NavbarProps) {
+  const menus = [
+    {name: "Home", href: "/"},
+  ];
+
+  const loggedInMenus = [
+    {name: "secret", href: "/auth/secret"},
+     {name: "logout", href: "/logout"},
+  ];
+  const nonLoggedInMenu = [
+    {name: "Login", href: "/login"},
+    {name: "Signup", href: "/signup"}
+  ]
+
+  return (
+    <div class="bg-black max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="text-2xl  ml-1 font-bold">
+        Fresh
       </div>
-    </header>
+      <ul class="flex gap-6">
+        {menus.map((menu) => (
+          <li>
+            <a
+              href={menu.href}
+              class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
+            >
+              {menu.name}
+            </a>
+          </li>
+        ))}
+
+        {
+          loggedIn ? (
+            loggedInMenus.map((menu) => (
+              <li>
+                <a
+                  href={menu.href}
+                  class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
+                >
+                  {menu.name}
+                </a>
+              </li>
+            ))
+          ) : (
+            nonLoggedInMenu.map((menu) => (
+              <li>
+                <a
+                  href={menu.href}
+                  class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
+                >
+                  {menu.name}
+                </a>
+              </li>
+            ))
+          )
+        }
+      </ul>
+    </div>
   );
 }

@@ -2,12 +2,18 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/api/file.tsx";
-import * as $1 from "./routes/api/folder.tsx";
-import * as $2 from "./routes/api/upload.ts";
-import * as $3 from "./routes/file/[id].tsx";
-import * as $4 from "./routes/folder/[id].tsx";
-import * as $5 from "./routes/index.tsx";
+import * as $0 from "./routes/_middleware.ts";
+import * as $1 from "./routes/api/upload.ts";
+import * as $2 from "./routes/auth/_middleware.ts";
+import * as $3 from "./routes/auth/secret.tsx";
+import * as $4 from "./routes/file/[id].tsx";
+import * as $5 from "./routes/file/index.ts";
+import * as $6 from "./routes/folder/[id].tsx";
+import * as $7 from "./routes/folder/index.ts";
+import * as $8 from "./routes/index.tsx";
+import * as $9 from "./routes/logout.tsx";
+import * as $10 from "./routes/signIn.tsx";
+import * as $11 from "./routes/signup.tsx";
 import * as $$0 from "./islands/CreateButton.tsx";
 import * as $$1 from "./islands/CreateModal.tsx";
 import * as $$2 from "./islands/FileUpload.tsx";
@@ -15,12 +21,18 @@ import * as $$3 from "./islands/deleteButton.tsx";
 
 const manifest = {
   routes: {
-    "./routes/api/file.tsx": $0,
-    "./routes/api/folder.tsx": $1,
-    "./routes/api/upload.ts": $2,
-    "./routes/file/[id].tsx": $3,
-    "./routes/folder/[id].tsx": $4,
-    "./routes/index.tsx": $5,
+    "./routes/_middleware.ts": $0,
+    "./routes/api/upload.ts": $1,
+    "./routes/auth/_middleware.ts": $2,
+    "./routes/auth/secret.tsx": $3,
+    "./routes/file/[id].tsx": $4,
+    "./routes/file/index.ts": $5,
+    "./routes/folder/[id].tsx": $6,
+    "./routes/folder/index.ts": $7,
+    "./routes/index.tsx": $8,
+    "./routes/logout.tsx": $9,
+    "./routes/signIn.tsx": $10,
+    "./routes/signup.tsx": $11,
   },
   islands: {
     "./islands/CreateButton.tsx": $$0,
