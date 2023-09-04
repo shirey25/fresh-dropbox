@@ -10,6 +10,8 @@ import {
 } from "../utils/db.ts";
 import supabaseClient from "../models/supabaseClient.ts"; // import supabase client
 
+const client = supabaseClient;
+
 export const handler: Handlers<SubContent> = {
   async GET(_req, ctx) {
     const user = supabaseClient.auth.user();

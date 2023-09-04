@@ -10,7 +10,7 @@ export const handler: Handlers<any, State> = {
     const email = form.get("email") as string;
     const password = form.get("password") as string;   
 
-    const { data, error } = await ctx.state.supabaseClient.auth.signIn({
+    const { data, error } = await ctx.state.supabaseClient.auth.signInWithPassword({
       email,
       password,
     });
@@ -40,7 +40,7 @@ export const handler: Handlers<any, State> = {
   },
 };
 
-export default function signIn(props: PageProps) {
+export default function Login(props: PageProps) {
   const err = props.url.searchParams.get("error");
 
   return ( 

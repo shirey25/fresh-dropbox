@@ -1,8 +1,7 @@
-import supabase from "../models/supabaseClient.ts";
+import supabaseClient  from "../models/supabaseClient.ts";
 import { FreshFile } from "../models/file.ts";
 
-const client = supabase;
-
+const client = supabaseClient;
 export async function uploadFile(
   file: Blob,
   id: string,
