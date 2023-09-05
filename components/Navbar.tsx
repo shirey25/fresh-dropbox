@@ -11,7 +11,6 @@ export function Navbar({ loggedIn }: NavbarProps) {
   ];
 
   const loggedInMenus = [
-    {name: "secret", href: "/auth/secret"},
      {name: "logout", href: "/logout"},
   ];
   const nonLoggedInMenu = [
@@ -29,7 +28,7 @@ export function Navbar({ loggedIn }: NavbarProps) {
           <li>
             <a
               href={menu.href}
-              class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
+              class="text-white hover:text-blue-400 py-1 border-gray-500"
             >
               {menu.name}
             </a>
@@ -42,7 +41,7 @@ export function Navbar({ loggedIn }: NavbarProps) {
               <li>
                 <a
                   href={menu.href}
-                  class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
+                  class="text-white hover:text-blue-400 py-1 border-gray-500"
                 >
                   {menu.name}
                 </a>
@@ -53,7 +52,7 @@ export function Navbar({ loggedIn }: NavbarProps) {
               <li>
                 <a
                   href={menu.href}
-                  class="text-gray-500 hover:text-gray-700 py-1 border-gray-500"
+                  class="text-white hover:text-blue-300 py-1 border-gray-500"
                 >
                   {menu.name}
                 </a>

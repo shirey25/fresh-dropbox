@@ -23,7 +23,7 @@ export default function CreateModal(props: CreateProps) {
               htmlFor="inputField"
               class="block text-sm font-medium text-gray-700"
             >
-              Folder name
+              New Folder Name
             </label>
             <input
               type="text"
@@ -36,14 +36,14 @@ export default function CreateModal(props: CreateProps) {
           <div class="flex justify-between">
             <button
               type="button"
-              class="mr-2 bg-red-600 border-rounded px-3 hover:bg-red-500 text-white py-2 px-4"
+              class="border border rounded px-3mr-2 bg-red-600 border-rounded px-3 hover:bg-red-500 text-white py-2 px-4"
               onClick={closeModal}
             >
               Cancel
             </button>
             <button
               type="submit"
-              class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4"
+              class="border border rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4"
             >
               Submit
             </button>

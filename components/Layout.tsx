@@ -1,3 +1,5 @@
+
+
 import type { ComponentChildren } from "preact";
 import { Head } from "$fresh/runtime.ts"
 import { useSignal } from "@preact/signals";
@@ -23,6 +25,7 @@ export default function Layout(props: LayoutProps) {
         <title>Fresh</title>
         <meta name="description" content="Fresh" />
         <link rel="icon" href="/favicon.ico" />
+      
       </Head>
 
       <Navbar loggedIn={props.isloggedIn} />

@@ -3,42 +3,42 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $0 from "./routes/_middleware.ts";
-import * as $1 from "./routes/api/upload.ts";
-import * as $2 from "./routes/auth/_middleware.ts";
-import * as $3 from "./routes/auth/secret.tsx";
-import * as $4 from "./routes/file/[id].tsx";
-import * as $5 from "./routes/file/index.ts";
-import * as $6 from "./routes/folder/[id].tsx";
-import * as $7 from "./routes/folder/index.ts";
+import * as $1 from "./routes/api/file/index.ts";
+import * as $2 from "./routes/api/folder/index.ts";
+import * as $3 from "./routes/api/upload.ts";
+import * as $4 from "./routes/auth/_middleware.ts";
+import * as $5 from "./routes/auth/secret.tsx";
+import * as $6 from "./routes/file/[id].tsx";
+import * as $7 from "./routes/folder/[id].tsx";
 import * as $8 from "./routes/index.tsx";
-import * as $9 from "./routes/logout.tsx";
-import * as $10 from "./routes/signIn.tsx";
+import * as $9 from "./routes/login.tsx";
+import * as $10 from "./routes/logout.tsx";
 import * as $11 from "./routes/signup.tsx";
 import * as $$0 from "./islands/CreateButton.tsx";
 import * as $$1 from "./islands/CreateModal.tsx";
-import * as $$2 from "./islands/FileUpload.tsx";
-import * as $$3 from "./islands/deleteButton.tsx";
+import * as $$2 from "./islands/DeleteButton.tsx";
+import * as $$3 from "./islands/FileUpload.tsx";
 
 const manifest = {
   routes: {
     "./routes/_middleware.ts": $0,
-    "./routes/api/upload.ts": $1,
-    "./routes/auth/_middleware.ts": $2,
-    "./routes/auth/secret.tsx": $3,
-    "./routes/file/[id].tsx": $4,
-    "./routes/file/index.ts": $5,
-    "./routes/folder/[id].tsx": $6,
-    "./routes/folder/index.ts": $7,
+    "./routes/api/file/index.ts": $1,
+    "./routes/api/folder/index.ts": $2,
+    "./routes/api/upload.ts": $3,
+    "./routes/auth/_middleware.ts": $4,
+    "./routes/auth/secret.tsx": $5,
+    "./routes/file/[id].tsx": $6,
+    "./routes/folder/[id].tsx": $7,
     "./routes/index.tsx": $8,
-    "./routes/logout.tsx": $9,
-    "./routes/signIn.tsx": $10,
+    "./routes/login.tsx": $9,
+    "./routes/logout.tsx": $10,
     "./routes/signup.tsx": $11,
   },
   islands: {
     "./islands/CreateButton.tsx": $$0,
     "./islands/CreateModal.tsx": $$1,
-    "./islands/FileUpload.tsx": $$2,
-    "./islands/deleteButton.tsx": $$3,
+    "./islands/DeleteButton.tsx": $$2,
+    "./islands/FileUpload.tsx": $$3,
   },
   baseUrl: import.meta.url,
 };

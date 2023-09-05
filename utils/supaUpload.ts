@@ -9,7 +9,7 @@ export async function uploadFile(
 ): Promise<string | undefined> {
   const { data, error } = await client
     .storage
-    .from("folders")
+    .from('main')
     .upload(parentfolder + "/" + id, file);
 
   if (error) {
@@ -20,7 +20,7 @@ export async function uploadFile(
 }
 
 export async function getPublicUrl(file: FreshFile): Promise<string> {
-  const { data } = await client.storage.from("folders").getPublicUrl(
+  const { data } = await client.storage.from('main').getPublicUrl(
     file.parentFolder + "/" + file.id,
   );
 
@@ -28,7 +28,7 @@ export async function getPublicUrl(file: FreshFile): Promise<string> {
 }
 
 export async function removeFile(file: FreshFile): Promise<void> {
-  const { error } = await client.storage.from("folders").remove([
+  const { error } = await client.storage.from("main").remove([
     file.parentFolder + "/" + file.id,
   ]);
 
