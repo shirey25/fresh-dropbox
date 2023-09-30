@@ -30,15 +30,17 @@ export const handler: Handlers<FileDisplay> = {
 export default function FilePage(props: PageProps<FileDisplay>) {
   return (
     <>
-      
-      
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div>File Name: {props.data.file.name}</div>
         <div class="flex items-center justify-center h-screen">
-          <embed type="text/html" style="width: 100%; height: 100%;" src={props.data.url}></embed>
+          <embed
+            type="text/html"
+            style="width: 100%; height: 100%;"
+            src={props.data.url}
+          >
+          </embed>
         </div>
       </div>
-      
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { PageProps } from "$fresh/server.ts";
 import { Handlers } from "$fresh/server.ts";
-import  Layout   from "../../components/Layout.tsx";  
+import Layout from "../../components/Layout.tsx";
 import { TableFolder } from "../../components/TableFolder.tsx";
 import { Folder, PageFolders } from "../../models/folder.ts";
 import {
@@ -57,10 +57,13 @@ export const handler: Handlers<PageFolders> = {
   },
 };
 
-export default function FolderPage (props: PageProps<PageFolders>) {
+export default function FolderPage(props: PageProps<PageFolders>) {
   return (
-    <Layout LayoutProps ={props.data.currentFolder}>
-      <TableFolder folders={props.data.subContent.subFolders} files={props.data.subContent.subFiles}/> 
-    </Layout> 
+    <Layout LayoutProps={props.data.currentFolder}>
+      <TableFolder
+        folders={props.data.subContent.subFolders}
+        files={props.data.subContent.subFiles}
+      />
+    </Layout>
   );
 }

@@ -5,7 +5,7 @@ const supabaseClient = createClient(
   Deno.env.get("SUPABASE_URL"),
   Deno.env.get("SUPABASE_KEY"),
   {
-    autoRefreshToken: true,    
+    autoRefreshToken: true,
   },
 );
 

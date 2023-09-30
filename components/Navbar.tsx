@@ -4,19 +4,18 @@ interface NavbarProps {
   loggedIn: boolean;
 }
 
-
 export function Navbar({ loggedIn }: NavbarProps) {
   const menus = [
-    {name: "Home", href: "/"},
+    { name: "Home", href: "/" },
   ];
 
   const loggedInMenus = [
-     {name: "logout", href: "/logout"},
+    { name: "logout", href: "/logout" },
   ];
   const nonLoggedInMenu = [
-    {name: "Login", href: "/login"},
-    {name: "Signup", href: "/signup"}
-  ]
+    { name: "Login", href: "/login" },
+    { name: "Signup", href: "/signup" },
+  ];
 
   return (
     <div class="bg-black max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -35,8 +34,8 @@ export function Navbar({ loggedIn }: NavbarProps) {
           </li>
         ))}
 
-        {
-          loggedIn ? (
+        {loggedIn
+          ? (
             loggedInMenus.map((menu) => (
               <li>
                 <a
@@ -47,7 +46,8 @@ export function Navbar({ loggedIn }: NavbarProps) {
                 </a>
               </li>
             ))
-          ) : (
+          )
+          : (
             nonLoggedInMenu.map((menu) => (
               <li>
                 <a
@@ -58,8 +58,7 @@ export function Navbar({ loggedIn }: NavbarProps) {
                 </a>
               </li>
             ))
-          )
-        }
+          )}
       </ul>
     </div>
   );

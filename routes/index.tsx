@@ -2,7 +2,7 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import Layout from "../components/Layout.tsx";
 import { TableFolder } from "../components/TableFolder.tsx";
 import { Folder, SubContent } from "../models/folder.ts";
-import { State } from "./_middleware.ts"
+import { State } from "./_middleware.ts";
 import {
   getFilesByParentId,
   getFoldersByParentId,
@@ -12,12 +12,11 @@ import {
 // deno-lint-ignore no-explicit-any
 export const handle: Handlers<any, State> = {
   GET(_req, ctx) {
-    return ctx.render({...ctx.state});
-  }
-}
+    return ctx.render({ ...ctx.state });
+  },
+};
 
-
-export const handler: Handlers < SubContent> = {
+export const handler: Handlers<SubContent> = {
   async GET(_req, ctx) {
     if (!ctx.state.token) {
       const headers = new Headers();
@@ -28,7 +27,6 @@ export const handler: Handlers < SubContent> = {
       });
     }
 
-      
     const subFolders = await getFoldersByParentId("home");
     const subFiles = await getFilesByParentId("home");
     const subContent: SubContent = {
@@ -36,9 +34,7 @@ export const handler: Handlers < SubContent> = {
       subFiles,
     };
 
-
-    
-    return ctx.render(subContent)
+    return ctx.render(subContent);
   },
 
   async POST(req, _ctx) {
@@ -52,7 +48,7 @@ export const handler: Handlers < SubContent> = {
     const newFolder: Folder = {
       id: crypto.randomUUID(),
       name: folder,
-      parentFolder: 'home',
+      parentFolder: "home",
     };
     await saveFolder(newFolder);
 
@@ -65,17 +61,16 @@ export const handler: Handlers < SubContent> = {
     });
   },
 };
- 
+
 export default function Home(props: PageProps) {
   return (
-    <Layout isloggedIn={props.data.token} folder={null}>                  
-        <div class="flex flex-col justify-center"> 
-          <TableFolder
+    <Layout isloggedIn={props.data.token} folder={null}>
+      <div class="flex flex-col justify-center">
+        <TableFolder
           folders={props.data.subFolders}
           files={props.data.subFiles}
-          />
-        </div>
+        />
+      </div>
     </Layout>
-
-  ) 
+  );
 }

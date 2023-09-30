@@ -14,8 +14,10 @@
     "twind": "https://esm.sh/twind@0.16.19",
     "twind/": "https://esm.sh/twind@0.16.19/",
     "$std/": "https://deno.land/std@0.190.0/",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.24.0"
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.24.0",
+    "esm-env": "https://ga.system.jspm.io/npm:esm-env@1.0.0/dev-ssr.js"
   },
+
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact"

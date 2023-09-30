@@ -1,11 +1,12 @@
 import { Options } from "$fresh/plugins/twind.ts";
 import { setup } from "twind";
 
-// Define your options object
 const options: Options = {
-  selfURL: import.meta.url,
-  preflight: true,
-  theme: {
+  // Other configuration options
+  persistSession: true,
+  storage: window.localStorage, // Provide an appropriate storage object
+  darkMode: "class",
+   theme: {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
       serif: ["Inter", "serif"],
@@ -25,10 +26,3 @@ setup(options);
 
 // Export the options object as the default export
 export default options;
-
-
-
- 
-
-
-

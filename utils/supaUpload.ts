@@ -1,4 +1,4 @@
-import supabaseClient  from "../models/supabaseClient.ts";
+import supabaseClient from "../models/supabaseClient.ts";
 import { FreshFile } from "../models/file.ts";
 
 const client = supabaseClient;
@@ -9,7 +9,7 @@ export async function uploadFile(
 ): Promise<string | undefined> {
   const { data, error } = await client
     .storage
-    .from('main')
+    .from("main")
     .upload(parentfolder + "/" + id, file);
 
   if (error) {
@@ -20,7 +20,7 @@ export async function uploadFile(
 }
 
 export async function getPublicUrl(file: FreshFile): Promise<string> {
-  const { data } = await client.storage.from('main').getPublicUrl(
+  const { data } = await client.storage.from("main").getPublicUrl(
     file.parentFolder + "/" + file.id,
   );
 
