@@ -3,6 +3,7 @@ import { Handlers } from "$fresh/server.ts";
 import { FreshFile } from "../../models/file.ts";
 import { getFile } from "../../utils/db.ts";
 import { getPublicUrl } from "../../utils/supaUpload.ts";
+import {Navbar} from "../../components/Navbar.tsx";
 
 interface FileDisplay {
   file: FreshFile;
@@ -30,6 +31,8 @@ export const handler: Handlers<FileDisplay> = {
 export default function FilePage(props: PageProps<FileDisplay>) {
   return (
     <>
+      <Navbar></Navbar>
+
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div>File Name: {props.data.file.name}</div>
         <div class="flex items-center justify-center h-screen">

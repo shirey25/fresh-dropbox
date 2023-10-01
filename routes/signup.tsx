@@ -34,10 +34,10 @@ export default function Signup(props: PageProps) {
   const err = props.url.searchParams.get("error");
 
   return (
-    <section class="bg-black-700">
+    <section class="bg-Gray-100">
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div class="mx-auto">
-          <h2 class="text-2xl font-bold mb-5 text-center">Signup for Access</h2>
+          <h2 class="rt-Heading rt-r-size-6 rt-r-weight-bold -rt-r-mt-1">Signup for Access</h2>
         </div>
 
         <div class="w-full bg-black - 700 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0">

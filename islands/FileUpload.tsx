@@ -33,7 +33,7 @@ export default function FileUpload(props: FileUploadProps) {
   const onUploadFile = async (event: Event) => {
     event.preventDefault();
     if (event.target) {
-      const file = event.target.files[0];
+      const file = event.target.file[0];
 
       const formData = new FormData();
       formData.append("file", file);

@@ -27,7 +27,7 @@ export default function Layout(props: LayoutProps) {
 
       <Navbar loggedIn={props.isloggedIn} />
 
-      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bg:black">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 bg:gray">
         <div class="mt-5">
           <CreateButton isOpen={createModalIsOpen} />
         </div>
